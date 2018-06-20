@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{stage.start_city}} - {{stage.finish_city}}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+<h1>{{stage.id}}. {{stage.start_city}} - {{stage.finish_city}}</h1>
+<p><h2>Distance = {{stage.kilometers }} km</h2></p><br/>
+<img src="{{ stage.image.url }}" width="540" height="320"><br/>
+</body>
+</html>

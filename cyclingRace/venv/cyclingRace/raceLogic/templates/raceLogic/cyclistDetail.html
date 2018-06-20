@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Found cyclist(s)</title>
+ <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+
+{% if cyclist|length > 1 %}
+{% for c in cyclist %}
+<div>
+   <img src="{{ c.image.url }}" ><br/><br/>
+</div>
+<div><h1>{{c.name}} {{c.surname}}</h1>
+    <h2>Date of birth: {{c.birthDate}}</h2>
+    <h2>Team: {{c.team.name }}</h2>
+</div>
+{% endfor %}
+{% elif cyclist %}
+<div>
+{% if cyclist.image %}
+   <img src="{{ cyclist.image.url }}" ><br/><br/>
+{% endif %}
+</div>
+<div><h1>{{cyclist.name}} {{cyclist.surname}}</h1>
+    <h2>Date of birth: {{cyclist.birthDate}}</h2>
+    <h2>Team: {{cyclist.team.name }}</h2>
+</div>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% load staticfiles %}
+ <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+{% if teams %}
+    {% for team in teams %}
+        <p><h2> {{team.name }} was established in {{ team.est_year }}. Team makes group of {{team.cyclist_amount }} cyclists.
+    They use {{team.bike_brand.name }} bikes.</h2></p><br/>
+        <img src="{{ team.image.url }}" width="260" height="200" ><br/><br/>
+       <h3> <a href="{% url 'raceLogic:displayBike' team.bike_brand.id %}"> Bike producer details </a></h3>
+    {% endfor %}
+{% endif %}

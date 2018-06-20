@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote results</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+<div>
+    <a href="{% url 'raceLogic:printMsg' %}"> <img src="/media/images/tdp.jpeg"> </a><br/>
+</div>
+<div>
+<h1>The hardest stage(s) of TdP 2018 voting results! </h1>
+{% for stage in stages %}
+
+    {% if stage.difficulty >= hardest %}
+    <h2>{{stage.id}}. {{stage.start_city}} - {{stage.finish_city}} {{stage.kilometers}} km
+     <img src="/media/images/diff.png" width="50" height="20"></h2><br/>
+    <h3>Stage difficulty votes: {{stage.difficulty}}  </h3>
+    {% endif %}
+{% endfor %}
+
+</div>
+
+</body>
+</html>

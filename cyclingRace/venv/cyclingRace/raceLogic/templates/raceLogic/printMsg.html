@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <title>Tour de Pologne </title>
+     <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+    <h1> Welcome on completely unofficial Tour de Pologne cycling race website! </h1>
+   <a href="{% url 'raceLogic:voteOnStage' %}"> <img src="/media/images/tdp.jpeg" class="img-responsive" width="260" height="200"  /></a><br/> <br/>
+
+    <ul>
+        <h2> <li><a href="{% url 'raceLogic:printBikes' %}" > See information about bikes of Tour de Pologne 2018 </a></li></h2><br/>
+       <h2> <li><a href="{% url 'raceLogic:displayAllTeams' %}" > See information about all participating teams in Tour de Pologne 2018 </a></li></h2><br/><h2><li><a href="{% url 'raceLogic:displayAllCyclists' %}" > See all cyclists in Tour de Pologne 2018  </a></li></h2><br/>
+       <h2> <li><a href="{% url 'raceLogic:searchCyclist' %}" > Search for cyclists of Tour de Pologne 2018  </a></li></h2><br/>
+       <h2> <li><a href="{% url 'raceLogic:listTeams' %}" > Search for teams lineups of Tour de Pologne 2018  </a></li></h2><br/>
+       <h2> <li><a href="{% url 'raceLogic:displayStages' %}" > See stages of Tour de Pologne 2018  </a></li></h2><br/>
+       <h2> <li><a href="{% url 'raceLogic:register' %}" > Manage Tour de Pologne 2018   </a></li></h2><br/>
+
+</body>
+</html>

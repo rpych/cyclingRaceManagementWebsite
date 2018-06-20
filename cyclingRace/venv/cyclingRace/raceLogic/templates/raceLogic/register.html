@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage database data</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+<a href="{% url 'raceLogic:printMsg' %}"> <img src="/media/images/tdp.jpeg" ></a>
+<h1>You can add or delete Person, Bike, Team:
+</h1>
+
+<ul>
+    <li><a href="{% url 'raceLogic:addPerson' %}"> Add Person </a></li>
+    <li><a href="{% url 'raceLogic:deletePerson' %}"> Delete Person </a></li>
+    <li><a href="{% url 'raceLogic:addTeam' %}"> Add Team </a></li>
+    <li><a href="{% url 'raceLogic:deleteTeam' %}"> Delete Team </a></li>
+    <li><a href="{% url 'raceLogic:postBike' %}"> Add Bike </a></li>
+    <li><a href="{% url 'raceLogic:deleteBike'  %}"> Delete Bike </a></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+<h1>{{banners.mainBanner}}</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label>Bike name: <input type="text" name="name" ></label><br/>
+    <label>Company establishment year: <input type="text" name="est_year"/></label> <br/>
+    <label>Add image: <input type="file" name="image"/></label><br/><br/>
+    <input type="submit" value="{{ banners.banner }}  "/>
+
+</form>

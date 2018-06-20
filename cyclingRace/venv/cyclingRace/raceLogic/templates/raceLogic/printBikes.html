@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+<h1>Bike brands:</h1>
+
+ {% for bike in bikes %}
+
+   <h2> <p>Name: {{bike.name}}, company establishment year: {{bike.est_year}}</p></h2><br/>
+
+   <div>{% if bike.image  %}
+        <img src="{{ bike.image.url }}" class="img-responsive" width="260" height="200" /><br/>
+
+        {% endif %} </div>
+
+ {% endfor %}
+
+
+
+

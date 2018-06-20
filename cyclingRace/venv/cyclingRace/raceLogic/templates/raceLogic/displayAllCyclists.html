@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TdP Cyclists</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+
+{% if cyclists %}
+<h1>List of cyclists participating in this year Tour de Pologne: </h1>
+<ul>
+    {% for cyclist in cyclists %}
+        <li><a href="{% url 'raceLogic:cyclistDetail' cyclist.id %} "> {{cyclist.name}} {{cyclist.surname}}  </a>
+        </li><br/>
+    {% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>

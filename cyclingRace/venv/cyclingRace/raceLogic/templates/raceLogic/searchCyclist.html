@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+<h1>Enter name and surname or only surname of cyclist</h1>
+<div>
+
+
+    <form action="{% url 'raceLogic:getCyclist' %}" method="GET" >
+
+        {% csrf_token %}
+        <p><label>Name <input type="text" name="name"/></label></p><br/>
+       <p> <label>Surname <input type="text" name="surname"/></label></p><br/><br/>
+        <input type="submit" value="Search"/><br/><br/>
+    </form>
+</div>
+</body>
+</html>

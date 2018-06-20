@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+<h1>Name: {{ team.name }}</h1><br/>
+
+<p><img src="{{ team.image.url }}" width="260" height="200" ></p><br/><br/>
+<ul>
+{% for cyclist in cyclists %}
+ <li>
+    <a href="{% url 'raceLogic:cyclistDetail' cyclist.id %}"> {{cyclist.name }} {{cyclist.surname}}</a> <br/>
+ </li>
+{% endfor %}
+</ul>

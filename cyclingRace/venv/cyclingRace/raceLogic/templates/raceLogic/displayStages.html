@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TdP stages</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+<h1>Vote for the hardest stage of Tour de Pologne 2018:</h1>
+<form action="{% url 'raceLogic:voteOnStage' %}" method="POST">
+    {% csrf_token %}
+    {% for stage in stages %}
+    <input type="radio" id="stage{{forloop.counter}}" name="stage" value="{{stage.id}}">
+           <label for="stage{{forloop.counter}}" > {{stage.start_city }}-{{stage.finish_city}}</label><br/><br/>
+
+    {% endfor %}
+    <br/>
+    <input type="submit" value="Vote"><br/><br/>
+</form>
+<h1>See stages details:</h1>
+<ul>
+    {% for stage in stages %}
+       <li> <a href="{% url 'raceLogic:stageDetails' stage.id %}"> {{stage.start_city}} - {{stage.finish_city}}</a></li><br/><br/>
+    {% endfor %}
+</ul>
+</body>
+</html>

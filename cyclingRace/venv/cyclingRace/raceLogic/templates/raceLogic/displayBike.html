@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike  {{bike.name}} </title>
+     <link rel="stylesheet" type="text/css" href="{% static 'raceLogic/style.css' %}" />
+</head>
+<body>
+        <h1>Bike producent: {{bike.name}}</h1><br/>
+        <h2>Company was set up in {{bike.est_year }}</h2><br/>
+        <img src="{{ bike.image.url }}" width="420" height="250">
+</body>
+</html>
